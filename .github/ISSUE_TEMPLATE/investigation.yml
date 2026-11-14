@@ -1,0 +1,67 @@
+name: Engineering investigation
+description: Evidence-based technical investigation with mandatory adversarial review
+title: "Investigation: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use fictional/synthetic public data. Read the [adversarial review policy](../../docs/adversarial-review.md). A sound negative result is a successful outcome.
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim and scope
+      description: State the precise engineering claim, problem, affected consumers, and assumptions.
+      placeholder: What exactly are we asserting, and under which conditions?
+    validations:
+      required: true
+  - type: textarea
+    id: counterargument
+    attributes:
+      label: Strongest credible counterargument
+      description: Steelman an informed critique and link credible counter-sources. Avoid false equivalence.
+      placeholder: What would a knowledgeable skeptic argue?
+    validations:
+      required: true
+  - type: textarea
+    id: simpler
+    attributes:
+      label: Simpler alternative
+      description: Consider removal, consolidation, existing tools, scripts, or doing nothing.
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Conditions under which this fails
+      description: Identify scale, cost, tenancy, supplier, operational, and staffing limits.
+    validations:
+      required: true
+  - type: textarea
+    id: test
+    attributes:
+      label: Discriminating experiment and precommitted thresholds
+      description: Include hypotheses, competing predictions, metrics, acceptance/reversal thresholds, safe environment, and rollback.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence, observations, and uncertainty
+      description: Record actual results after the experiment; distinguish facts from interpretation.
+    validations:
+      required: false
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision and revisit triggers
+      description: What changed? What would change our minds later?
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public safety boundary
+      options:
+        - label: I will use synthetic/sanitized evidence and will not inject faults into customer/production systems without separate authorization.
+          required: true
